@@ -14,6 +14,7 @@ import { ProductListService } from './components/store/product-list/product-list
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BannerComponent } from './components/shared/banner/banner.component';
 import { LoginPanelComponent } from './components/admin/login-panel/login-panel.component';
+import { OffertListComponent } from './components/store/product-list/offers/offert-list/offert-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoginPanelComponent } from './components/admin/login-panel/login-panel.
     ProductListComponent,
     ProductItemComponent,
     BannerComponent,
-    LoginPanelComponent
+    LoginPanelComponent,
+    OffertListComponent
   ],
   imports: [
     BrowserModule,

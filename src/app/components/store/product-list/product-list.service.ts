@@ -1,14 +1,14 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHandler, HttpHeaders } from "@angular/common/http"
+import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { Product } from "./model/Product";
 import { Observable } from "rxjs";
-
+import { environment } from './../../../../environments/environment';
 @Injectable({
     providedIn: 'root'
 })
 
 export class ProductListService {
-    private urlOfService = 'http://localhost:3100/api/products'
+    private urlOfService = environment.apiUrl
     httpOptions = {
         Headers: new HttpHeaders({ 'content-type': 'application/json' })
     }
@@ -16,6 +16,9 @@ export class ProductListService {
     constructor(private httpClient: HttpClient) { }
 
     getProduct():Observable<Array<Product>>{
-        return this.httpClient.get<Array<Product>>(this.urlOfService)
+        return this.httpClient.get<Array<Product>>(this.urlOfService+'/products')
+    }
+    getProductOffers():Observable<Array<Product>>{
+        return this.httpClient.get<Array<Product>>(this.urlOfService+'/offers')
     }
 }
