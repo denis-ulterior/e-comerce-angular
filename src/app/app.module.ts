@@ -15,6 +15,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BannerComponent } from './components/shared/banner/banner.component';
 import { LoginPanelComponent } from './components/admin/login-panel/login-panel.component';
 import { OffertListComponent } from './components/store/product-list/offers/offert-list/offert-list.component';
+import { Router, RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { OffertListComponent } from './components/store/product-list/offers/offe
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [ProductListService],
   bootstrap: [AppComponent]

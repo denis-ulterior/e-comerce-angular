@@ -1,6 +1,9 @@
-<app-banner></app-banner>
-<div class="row mt-2">
-    <div class="col-sm-2">
+<div *ngIf="route.url !== '/login'">
+    <app-banner></app-banner>
+</div>
+
+<div class="row mt-4">
+    <div class="col-sm-2" *ngIf="route.url !== '/login'">
         <app-filters></app-filters>
     </div>
     <div class="col">
