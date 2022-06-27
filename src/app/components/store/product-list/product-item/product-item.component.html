@@ -1,0 +1,14 @@
+<div class="card shadow-sm" style="width: 16rem;">
+    <img src="{{'assets/images/'+produto.img}}" alt="" class="bd-placeholder-img card-img-top" width="16rem" />
+    <div class="card-body">
+        <p class="card-text">{{produto.name}}</p>
+        <p class="card-text">{{produto.category}}</p>
+        <p class="card-text">{{produto.quantity}}</p>
+        <p class="card-text">{{produto.price | currency:'BRL'}} </p>
+
+        <div class="btn-group">
+            <button class="btn btn-primary btn-sm">Comprar</button>
+            <button class="btn btn-outline-primary btn-sm">Detalhes</button>
+        </div>
+    </div>
+</div>
