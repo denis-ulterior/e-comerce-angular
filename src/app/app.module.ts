@@ -13,6 +13,7 @@ import { ProductItemComponent } from './components/store/product-list/product-it
 import { ProductListService } from './components/store/product-list/product-list.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BannerComponent } from './components/shared/banner/banner.component';
+import { LoginPanelComponent } from './components/admin/login-panel/login-panel.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BannerComponent } from './components/shared/banner/banner.component';
     FiltersComponent,
     ProductListComponent,
     ProductItemComponent,
-    BannerComponent
+    BannerComponent,
+    LoginPanelComponent
   ],
   imports: [
     BrowserModule,
