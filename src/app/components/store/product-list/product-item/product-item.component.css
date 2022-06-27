@@ -1,0 +1,5 @@
+img{
+    height: 220pt;
+    overflow: hidden;
+    object-fit: cover;
+}

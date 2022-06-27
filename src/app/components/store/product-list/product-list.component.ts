@@ -10,6 +10,7 @@ import { ProductListService } from './product-list.service';
 })
 export class ProductListComponent implements OnInit {
   products: Array<Product>=[]
+  
   constructor(private productService:ProductListService) { }
 
   ngOnInit(): void {
@@ -19,5 +20,6 @@ export class ProductListComponent implements OnInit {
       console.log(this.products)
     })
   }
+  
 
 }
