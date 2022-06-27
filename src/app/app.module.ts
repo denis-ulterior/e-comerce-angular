@@ -12,6 +12,7 @@ import { ProductListComponent } from './components/store/product-list/product-li
 import { ProductItemComponent } from './components/store/product-list/product-item/product-item.component';
 import { ProductListService } from './components/store/product-list/product-list.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { BannerComponent } from './components/shared/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     StoreAppComponent,
     FiltersComponent,
     ProductListComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
