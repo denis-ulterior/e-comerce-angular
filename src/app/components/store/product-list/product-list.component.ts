@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { Product } from './model/Product';
 import { ProductListService } from './product-list.service';
@@ -9,17 +10,17 @@ import { ProductListService } from './product-list.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products: Array<Product>=[]
   
-  constructor(private productService:ProductListService) { }
-
+  products: Array<Product>=[]
+  constructor(private productService:ProductListService,private route: Router) { }
+  filtros: Array<any> = []
   ngOnInit(): void {
-    this.productService.getProduct().subscribe(retorno =>{
-      this.products = retorno
-      if(!environment.production)
-      console.log(this.products)
+    this.productService.getProduct().subscribe(res=>{
+      this.products = res
     })
+
   }
+ 
   
 
 }

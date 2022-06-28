@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
+import { ProductListService } from '../product-list/product-list.service';
 
 
 @Component({
@@ -14,14 +15,17 @@ export class FiltersComponent implements OnInit {
   private minimo=0
   private maximo=0
 
-  constructor() { }
+  constructor(private productService:ProductListService) { }
 
   ngOnInit(): void {
   }
   fitrarResultado(min:string,max:string) {
-    this.minimo = parseInt(min)
+   
+   this.minimo = parseInt(min)
     this.maximo = parseInt(max)
+    this.maximo < this.minimo?this.minimo=0:null
     this.valoresEvent.emit([this.minimo,this.maximo]);
+    
   }
 
 }

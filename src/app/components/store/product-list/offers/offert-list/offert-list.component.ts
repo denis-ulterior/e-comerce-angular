@@ -9,15 +9,13 @@ import { ProductListService } from '../../product-list.service';
   styleUrls: ['./offert-list.component.css']
 })
 export class OffertListComponent implements OnInit {
-  products:Array<Product>=[]
   constructor(private productService:ProductListService) { }
-
+  products:Array<Product>=[]
   ngOnInit(): void {
-    this.productService.getProductOffers().subscribe(retorno=>{
-      this.products = retorno
-      if(!environment.production)
-      console.log(this.products)
+    this.productService.getProductOffers().subscribe(res=>{
+      this.products = res
     })
+    if(!environment.production)
+      console.log(this.products)
   }
-
 }
