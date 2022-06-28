@@ -31,7 +31,7 @@ import { FilteredListComponent } from './components/store/product-list/filtered/
     BannerComponent,
     LoginPanelComponent,
     OffertListComponent,
-    FilteredListComponent
+    FilteredListComponent,
   ],
   imports: [
     BrowserModule,

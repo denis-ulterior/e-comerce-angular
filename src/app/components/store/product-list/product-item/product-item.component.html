@@ -1,14 +1,41 @@
-<div class="card shadow-sm" style="width: 16rem;">
-    <img src="{{'assets/images/'+produto.img}}" alt="" class="bd-placeholder-img card-img-top" width="16rem" />
-    <div class="card-body">
-        <p class="card-text">Produto: {{produto.name}}</p>
-        <p class="card-text">Categoria: {{produto.category}}</p>
-        <p class="card-text">Disponíveis: {{produto.quantity}}</p>
-        <p class="card-text">Preço: {{produto.price | currency:'BRL'}} </p>
+<div class="d-flex justify-content-around">
+    <div class="card shadow-sm mb-3" style="width: 16rem;">
+        <img src="{{'assets/images/'+produto.img}}" alt="" class="bd-placeholder-img card-img-top" width="16rem" />
+        <div class="card-body">
+            <p class="card-text">{{produto.name}}</p>
 
-        <div class="btn-group">
-            <button class="btn btn-primary btn-sm">Comprar</button>
-            <button class="btn btn-outline-primary btn-sm">Detalhes</button>
+            <p class="card-text">Preço: {{produto.price | currency:'BRL'}} </p>
+
+            <div class="btn-group">
+                <button class="btn btn-primary btn-sm">Comprar</button>
+                <button class="btn btn-outline-primary btn-sm" (click)="show()">Detalhes</button>
+
+            </div>
         </div>
     </div>
 </div>
+<!-- The Modal -->
+<div class="modal c" id="myModal" [style.display]="showModal ? 'block' : 'none'">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header b">
+                <h4 class="modal-title">{{ produto.name }}</h4>
+
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p class="card-text">Categoria: {{produto.category}}</p>
+                <p class="card-text">Disponíveis: {{produto.quantity}}</p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer  align-self-start">
+                <button class="btn btn-primary btn-sm">Comprar</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal"
+                    (click)="hide()">Fechar</button>
+            </div>
+
+        </div>
+    </div>
