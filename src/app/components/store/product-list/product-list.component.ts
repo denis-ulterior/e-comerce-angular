@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { CarrinhoService } from '../../shared/services/carrinho.service';
 import { Product } from './model/Product';
 import { ProductListService } from './product-list.service';
 
@@ -12,7 +13,7 @@ import { ProductListService } from './product-list.service';
 export class ProductListComponent implements OnInit {
   
   products: Array<Product>=[]
-  constructor(private productService:ProductListService,private route: Router) { }
+  constructor(private productService:ProductListService) { }
   filtros: Array<any> = []
   ngOnInit(): void {
     this.productService.getProduct().subscribe(res=>{
@@ -20,7 +21,4 @@ export class ProductListComponent implements OnInit {
     })
 
   }
- 
-  
-
 }

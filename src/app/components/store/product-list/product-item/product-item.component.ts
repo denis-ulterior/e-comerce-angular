@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CarrinhoService } from 'src/app/components/shared/services/carrinho.service';
 import { Product } from '../model/Product';
 
 @Component({
@@ -10,7 +11,8 @@ export class ProductItemComponent implements OnInit {
   public showModal:boolean = false
   @Input()
   produto!:Product
-  constructor() { }
+
+  constructor( private carrinho:CarrinhoService) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +24,9 @@ export class ProductItemComponent implements OnInit {
   //Bootstrap Modal Close event
   public hide():void {
     this.showModal = false;
+  }
+  addProduct(){
+   this.carrinho.addProduct(this.produto)
   }
 
 }

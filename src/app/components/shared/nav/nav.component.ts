@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarrinhoService } from '../services/carrinho.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  itensCarrinho = 0
+  constructor(private carrinho: CarrinhoService) { }
 
   ngOnInit(): void {
+  }
+  ngDoCheck() {
+    this.getQtdItemsCarrinho()
+  }
+  getQtdItemsCarrinho() {
+    this.itensCarrinho = this.carrinho.getCarrinho().produtos?.length as number
   }
 
 }

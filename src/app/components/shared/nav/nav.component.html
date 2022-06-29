@@ -8,9 +8,13 @@
             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
                 <a class="me-3 py-2 text-dark text-decoration-none" [routerLink]="['']">Ofertas</a>
                 <a class="me-3 py-2 text-dark text-decoration-none" [routerLink]="['/products']">Produtos</a>
-                <a class="me-3 py-2 text-dark text-decoration-none" href="#">Suporte</a>
+                
             </nav>
-            <a href="#" class="btn btn-outline-primary" [routerLink]="['/login']">Entrar</a>
+            <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                <a class="me-3 py-2 text-dark text-decoration-none" href="#">Carrinho: {{itensCarrinho}}</a>
+                <a href="#" class="btn btn-outline-primary" [routerLink]="['/login']">Entrar</a>
+            </nav>
+            
         </div>
     </header>
 </div>
