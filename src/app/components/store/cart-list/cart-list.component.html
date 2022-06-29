@@ -1,0 +1,10 @@
+<div class="row carrinho-title my-3">
+    <h3>Produtos no carrinho</h3>
+</div>
+<div class="row">
+    <div class="col-md-4" *ngFor="let produto of products">
+        <app-product-item [produto]="produto">
+
+        </app-product-item>
+    </div>
+</div>

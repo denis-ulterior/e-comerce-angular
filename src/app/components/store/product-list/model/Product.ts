@@ -4,5 +4,7 @@ export interface Product {
     price: number,
     quantity: number,
     category: string,
-    img: string
+    img: string,
+    inCart?:boolean,
+    qtdAdded?:number
 }

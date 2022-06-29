@@ -9,7 +9,7 @@
                 <a class="me-3 py-2 text-dark text-decoration-none" [routerLink]="['/products']">Produtos</a>
             </nav>
             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-                <a class="me-3 py-2 text-dark text-decoration-none" href="#">Carrinho: {{itensCarrinho}}</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" href="#" [routerLink]="['/carrinho']" routerLinkActive="router-link-active" >Carrinho: {{itensCarrinho}}</a>
                 <a href="#" class="btn btn-outline-primary" [routerLink]="['/login']">Entrar</a>
             </nav>
 

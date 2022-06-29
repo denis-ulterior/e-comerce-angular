@@ -26,5 +26,12 @@ export class ProductItemComponent implements OnInit {
   addProduct() {
     this.carrinho.addProduct(this.produto)
   }
+  removeProduct(){
+    this.carrinho.removeProduct(this.produto)
+    this.ngOnDestroy()
+  }
+  ngOnDestroy() {
+    console.log('Produto removido do carrinho');
+  }
 
 }

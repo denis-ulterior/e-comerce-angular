@@ -17,6 +17,7 @@ import { LoginPanelComponent } from './components/admin/login-panel/login-panel.
 import { OffertListComponent } from './components/store/product-list/offers/offert-list/offert-list.component';
 import { Router, RouterModule } from '@angular/router';
 import { FilteredListComponent } from './components/store/product-list/filtered/filtered-list/filtered-list.component';
+import { CartListComponent } from './components/store/cart-list/cart-list.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FilteredListComponent } from './components/store/product-list/filtered/
     LoginPanelComponent,
     OffertListComponent,
     FilteredListComponent,
+    CartListComponent,
   ],
   imports: [
     BrowserModule,
