@@ -8,25 +8,23 @@ import { Product } from '../model/Product';
   styleUrls: ['./product-item.component.css']
 })
 export class ProductItemComponent implements OnInit {
-  public showModal:boolean = false
+  public showModal: boolean = false
   @Input()
-  produto!:Product
+  produto!: Product
 
-  constructor( private carrinho:CarrinhoService) { }
+  constructor(private carrinho: CarrinhoService) { }
 
   ngOnInit(): void {
   }
-  public show():void {
+  public show(): void {
     this.showModal = true; // Show-Hide Modal Check
-  
-    console.log('Mostrar modal desc: ',this.showModal)
   }
   //Bootstrap Modal Close event
-  public hide():void {
+  public hide(): void {
     this.showModal = false;
   }
-  addProduct(){
-   this.carrinho.addProduct(this.produto)
+  addProduct() {
+    this.carrinho.addProduct(this.produto)
   }
 
 }

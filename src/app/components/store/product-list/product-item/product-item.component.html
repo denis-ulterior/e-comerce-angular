@@ -3,13 +3,10 @@
         <img src="{{'assets/images/'+produto.img}}" alt="" class="bd-placeholder-img card-img-top" width="16rem" />
         <div class="card-body">
             <p class="card-text">{{produto.name}}</p>
-
             <p class="card-text">Preço: {{produto.price | currency:'BRL'}} </p>
-
             <div class="btn-group">
                 <button class="btn btn-primary btn-sm" (click)="addProduct()">Comprar</button>
                 <button class="btn btn-outline-primary btn-sm" (click)="show()">Detalhes</button>
-
             </div>
         </div>
     </div>
@@ -21,21 +18,17 @@
             <!-- Modal Header -->
             <div class="modal-header b">
                 <h4 class="modal-title">{{ produto.name }}</h4>
-
             </div>
-
             <!-- Modal body -->
             <div class="modal-body">
                 <p class="card-text">Categoria: {{produto.category}}</p>
                 <p class="card-text">Disponíveis: {{produto.quantity}}</p>
             </div>
-
             <!-- Modal footer -->
             <div class="modal-footer  align-self-start">
-                <button class="btn btn-primary btn-sm">Comprar</button>
+                <button class="btn btn-primary btn-sm" (click)="addProduct()">Comprar</button>
                 <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal"
                     (click)="hide()">Fechar</button>
             </div>
-
         </div>
     </div>

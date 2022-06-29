@@ -19,15 +19,15 @@ export class ProductListService {
 
     constructor(private httpClient: HttpClient) { }
 
-    getProduct():Observable<Array<Product>> {
+    getProduct(): Observable<Array<Product>> {
         return this.httpClient.get<Array<Product>>(this.urlOfService + '/products')
     }
-    getProductOffers():Observable<Array<Product>> {
+    getProductOffers(): Observable<Array<Product>> {
         return this.httpClient.get<Array<Product>>(this.urlOfService + '/offers')
     }
-    updateFiltered(filtro: Array<any>):Observable<Array<Product>> {
-       console.log('Filtro recebido em service: ', filtro)
-       return  this.httpClient.get<Array<Product>>(this.urlOfService + '/products/filter/' + filtro[0] + '/' + filtro[1])
+    updateFiltered(filtro: Array<any>): Observable<Array<Product>> {
+        console.log('Filtro recebido em service: ', filtro)
+        return this.httpClient.get<Array<Product>>(this.urlOfService + '/products/filter/' + filtro[0] + '/' + filtro[1])
     }
 
 }

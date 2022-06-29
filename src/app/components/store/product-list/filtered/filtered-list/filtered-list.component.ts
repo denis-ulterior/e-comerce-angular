@@ -18,16 +18,15 @@ export class FilteredListComponent implements OnInit {
       (e: RouterEvent) => {
         let params = e.url.split('/')
         let maxTmp = params.pop() as string
-
         this.max = parseInt(maxTmp)
         let minTmp = params.pop() as string
         this.min = parseInt(minTmp)
+        
         if (!environment.production)
-          console.log('Filtro processado na rota: ',this.min, this.max)
+          console.log('Filtro processado na rota: ', this.min, this.max)
         this.updateList()
       });
   }
-
   products: Array<Product> = []
   ngOnInit(): void {
 
@@ -37,5 +36,4 @@ export class FilteredListComponent implements OnInit {
       this.products = res
     })
   }
-
 }

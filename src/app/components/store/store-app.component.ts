@@ -17,8 +17,8 @@ export class StoreAppComponent implements OnInit {
   }
   getFilter(valores: any) {
     this.filtros = valores
-    this.productListService.updateFiltered(this.filtros).subscribe(res=>{
-      this.route.navigate(['filtered',valores[0],valores[1]])
+    this.productListService.updateFiltered(this.filtros).subscribe(res => {
+      this.route.navigate(['filtered', valores[0], valores[1]])
     })
     if (!environment.production)
       console.log(this.filtros)

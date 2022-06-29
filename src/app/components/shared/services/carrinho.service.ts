@@ -7,22 +7,22 @@ import { Carrinho } from './carrinho';
   providedIn: 'root'
 })
 @Injectable({
-  providedIn:'root'
+  providedIn: 'root'
 })
 export class CarrinhoService {
-  private carrinho:Carrinho={id:null,produtos:[]}
+  private carrinho: Carrinho = { id: null, produtos: [] }
   constructor() { }
 
-  addProduct(product:Product){
+  addProduct(product: Product) {
     let res = this.carrinho.produtos?.push(product)
-    if(!environment.production){
-      console.log('Adicionado novo item, total de items: ',res)
+    if (!environment.production) {
+      console.log('Adicionado novo item, total de items: ', res)
     }
   }
-  getProducts():Array<Product>{
+  getProducts(): Array<Product> {
     return this.carrinho.produtos as Array<Product>
   }
-  getCarrinho(){
+  getCarrinho() {
     return this.carrinho
   }
 }

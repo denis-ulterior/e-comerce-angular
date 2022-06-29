@@ -1,8 +1,8 @@
-export interface Product{
-id?:string,
-name:string,
-price:number,
-quantity:number,
-category:string,
-img:string
+export interface Product {
+    id?: string,
+    name: string,
+    price: number,
+    quantity: number,
+    category: string,
+    img: string
 }

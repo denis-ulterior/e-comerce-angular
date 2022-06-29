@@ -12,20 +12,20 @@ export class FiltersComponent implements OnInit {
 
   @Output() valoresEvent = new EventEmitter<Array<any>>();
 
-  private minimo=0
-  private maximo=0
+  private minimo = 0
+  private maximo = 0
 
-  constructor(private productService:ProductListService) { }
+  constructor(private productService: ProductListService) { }
 
   ngOnInit(): void {
   }
-  fitrarResultado(min:string,max:string) {
-   
-   this.minimo = parseInt(min)
+  fitrarResultado(min: string, max: string) {
+
+    this.minimo = parseInt(min)
     this.maximo = parseInt(max)
-    this.maximo < this.minimo?this.minimo=0:null
-    this.valoresEvent.emit([this.minimo,this.maximo]);
-    
+    this.maximo < this.minimo ? this.minimo = 0 : null
+    this.valoresEvent.emit([this.minimo, this.maximo]);
+
   }
 
 }
